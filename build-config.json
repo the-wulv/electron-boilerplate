@@ -50,5 +50,9 @@
 	"compression": "normal",
 	"extraResources": [],
 	"extraFiles": [],
-	"asar": true
+	"asar": true,
+	"publish": {
+		"provider": "github",
+		"release": "draft"
+	}
 }
