@@ -5,11 +5,15 @@ environment:
 
 version: 1.0.{build}
 
+cache:
+- node_modules
+- '%USERPROFILE%\.electron'
+
 install:
 - ps: Install-Product node $env:nodejs_version
 - cmd: node --version
 - cmd: npm --version
-- cmd: npm install
+- cmd: npm ci
 
 build_script:
 - cmd: npm run build
