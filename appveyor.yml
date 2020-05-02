@@ -17,3 +17,13 @@ build_script:
 test_script:
 - cmd: npm test
 
+artifacts:
+- path: 'dist/*.exe'
+
+deploy:
+- provider: GitHub
+  auth_token:
+    secure: HgdtbjmzxMx6nvGah9A2HTFFpCDYcetTrQrkeWZ+bxF5ZwDtJ4rqTZua+SdpwMjb
+  artifact: 'dist/*.exe'
+  draft: true
+  prerelease: true
