@@ -5,7 +5,7 @@
   "private": true,
   "main": "app/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "start": "electron app/main.js",
     "bundle:dev": "node webpack --dev",
     "bundle:prod": "node webpack --prod",
