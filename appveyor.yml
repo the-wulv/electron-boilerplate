@@ -1,4 +1,6 @@
 environment:
+  GH_TOKEN:
+    secure: 8KYYD5z1Nx3aZowlM5HLE5yMwiv8m8tzJpHhsJ7NsIsXp+Z8J1dy5mhgIOkmVC+o
   nodejs_version: "12"
 
 version: 1.0.{build}
