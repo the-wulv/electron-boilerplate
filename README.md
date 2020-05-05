@@ -2,10 +2,13 @@
 A boilerplate for making Electron applications, with preconfigured tools and utilities.
 
 It includes the following tools:
-- [electron-builder](https://github.com/electron-userland/electron-builder) for building the application
+- [electron-builder](https://github.com/electron-userland/electron-builder) for building and releasing the application
 - [webpack](https://webpack.js.org/) for transpiling, bundling and minifying the code before building
 - [react](https://reactjs.org/) for the renderer process
 - [babel](https://babeljs.io/) for transpiling the JSX syntax of react (integrated in webpack)
+- [spectron](https://www.electronjs.org/spectron) for testing the application (using the [mocha](https://mochajs.org/) testiong framework)
+
+Also, it includes configuration for [AppVeyor](https://www.appveyor.com/).
 
 ## Installation
 ```console
@@ -19,6 +22,7 @@ The following NPM scripts are defined:
 
 |   Command   |                                Function                                 |
 |:------------|:------------------------------------------------------------------------|
+| test        | Tests the application                                                   |
 | start       | Starts the application                                                  |
 | bundle:dev  | Bundles the source code (for development)                               |
 | bundle:prod | Bundles the source code (for production)                                |
