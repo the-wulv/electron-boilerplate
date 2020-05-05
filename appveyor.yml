@@ -6,8 +6,7 @@ environment:
 version: 1.0.{build}
 
 cache:
-- node_modules
-- '%USERPROFILE%\.electron'
+- '%LOCALAPPDATA%/electron/cache'
 
 install:
 - ps: Install-Product node $env:nodejs_version
