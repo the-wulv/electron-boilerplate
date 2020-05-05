@@ -6,7 +6,7 @@
   "private": true,
   "main": "app/main.js",
   "scripts": {
-    "test": "mocha",
+    "test": "node build-config && mocha",
     "start": "electron app/main.js",
     "bundle:dev": "node webpack --dev",
     "bundle:prod": "node webpack --prod",
