@@ -4,4 +4,3 @@ node_modules
 # Ignore distribution directory
 dist
 app/*
-!app/package.json

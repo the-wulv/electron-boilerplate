@@ -1,5 +1,6 @@
 {
   "name": "electron-boilerplate",
+  "fullname": "Electron Boilerplate",
   "version": "0.0.0",
   "description": "A boilerplate for Electron applications",
   "private": true,

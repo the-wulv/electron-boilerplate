@@ -1,9 +1,29 @@
-const appPackage = require('./app/package.json');
+const fs = require('fs');
+const path = require('path');
+const package = require('./package.json');
 
+// Change this if you have changed the bundler output directory
+const secondPackageDir = 'app';
+
+const secondPackage = {
+	name: package.name,
+	version: package.version,
+	description: package.description,
+	author: package.author,
+	main: path.relative(secondPackageDir, package.main)
+};
+fs.writeFileSync(
+	path.join(secondPackageDir, 'package.json'), // Path of the second package.json
+	JSON.stringify(secondPackage) // The data of the package
+);
+
+/****************************
+  Configuration begins here
+****************************/
 module.exports = {
-	appId: `com.electron.${appPackage.name}`,
-	productName: appPackage.fullname,
-	copyright: `Copyright © 2020 ${appPackage.author}`,
+	appId: `com.electron.${package.name}`,
+	productName: package.fullname,
+	copyright: `Copyright © 2020 ${package.author}`,
 	directories: {
 		buildResources: 'build',
 		output: 'dist',
@@ -36,7 +56,7 @@ module.exports = {
 		extraFiles: [
 			{
 				from: 'build/VisualElementsManifest.xml',
-				to: `${appPackage.name}.VisualElementsManifest.xml`
+				to: `${package.name}.VisualElementsManifest.xml`
 			}
 		]
 	},
