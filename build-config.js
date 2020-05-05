@@ -1,5 +1,25 @@
+const fs = require('fs');
+const path = require('path');
 const package = require('./package.json');
 
+// Change this if you have changed the bundler output directory
+const secondPackageDir = 'app';
+
+const secondPackage = {
+	name: package.name,
+	version: package.version,
+	description: package.description,
+	author: package.author,
+	main: path.relative(secondPackageDir, package.main)
+};
+fs.writeFileSync(
+	path.join(secondPackageDir, 'package.json'), // Path of the second package.json
+	JSON.stringify(secondPackage) // The data of the package
+);
+
+/****************************
+  Configuration begins here
+****************************/
 module.exports = {
 	appId: `com.electron.${package.name}`,
 	productName: package.fullname,
