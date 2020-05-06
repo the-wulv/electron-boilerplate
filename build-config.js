@@ -2,6 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const package = require('./package.json');
 
+console.log(process.cwd());
+
 // Change this if you have changed the bundler output directory
 const secondPackageDir = 'app';
 
