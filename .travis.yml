@@ -9,6 +9,13 @@ os:
 services:
 - xvfb
 
+cache:
+  npm: false
+  directories:
+  - $HOME/.npm
+  - $HOME/.cache/electron
+  - $HOME/Library/Caches/electron
+
 install:
 - npm ci
 
