@@ -5,3 +5,13 @@ node_js:
 os:
 - osx
 - linux
+
+services:
+- xvfb
+
+install:
+- npm ci
+
+script:
+- npm run bundle:prod
+- npm test
