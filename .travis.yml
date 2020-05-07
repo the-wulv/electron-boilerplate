@@ -6,12 +6,17 @@ os:
 - osx
 - linux
 
-services:
-- xvfb
+jobs:
+  include:
+  - os: linux
+    services:
+    - xvfb
+    script:
+    - xvfb-run npm test
+  - os: osx
+    script:
+    - npm test
 
 install:
 - npm ci
 - npm run bundle:prod
-
-script:
-- xvfb-run npm test
