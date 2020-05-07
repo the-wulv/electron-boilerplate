@@ -5,3 +5,7 @@ node_js:
 os:
 - osx
 - linux
+
+install:
+- npm ci
+- npm run bundle:prod
