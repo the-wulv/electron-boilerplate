@@ -1,4 +1,5 @@
 # Electron boilerplate
+[![Run on Repl.it](https://repl.it/badge/github/the-wulv/electron-boilerplate)](https://repl.it/github/the-wulv/electron-boilerplate)
 A boilerplate for making Electron applications, with preconfigured tools and utilities.
 
 It includes the following tools:
