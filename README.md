@@ -28,6 +28,7 @@ The following NPM scripts are defined:
 | bundle:prod | Bundles the source code (for production)                                |
 | bundle:live | Activates the webpack watcher, bundles code automatically when you save |
 | build       | Builds the application                                                  |
+| publish     | Builds the application and publishes it as a GitHub release             |
 
 ## Directories
 This is the directory structure of the project:

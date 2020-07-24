@@ -11,7 +11,8 @@
     "bundle:dev": "node webpack --dev",
     "bundle:prod": "node webpack --prod",
     "bundle:live": "node webpack --dev --watch",
-    "build": "npm run bundle:prod && electron-builder --config build-config.js"
+    "build": "npm run bundle:prod && electron-builder --config build-config.js",
+    "publish": "npm run bundle:prod && electron-builder --config build-config.js --publish always"
   },
   "author": "Achilleas Michailidis",
   "license": "SEE LICENSE IN LICENSE",

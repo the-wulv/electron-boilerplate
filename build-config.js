@@ -78,8 +78,9 @@ module.exports = {
 	extraResources: [],
 	extraFiles: [],
 	asar: true,
-	publish: {
+	publish: process.argv.includes('--publish') || process.argv.includes('-p') ? {
 		provider: 'github',
-		release: 'draft'
-	}
+		releaseType: 'draft',
+		publishAutoUpdate: true
+	} : {}
 }
