@@ -82,5 +82,5 @@ module.exports = {
 		provider: 'github',
 		releaseType: 'draft',
 		publishAutoUpdate: true
-	} : {}
+	} : undefined;
 }
