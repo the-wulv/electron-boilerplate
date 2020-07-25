@@ -1,24 +1,25 @@
+environment:
+  GH_TOKEN:
+    secure: QFxUKBUe3jwvUdS2rPo4w8J+WBaui0d0brYgm1yfgPU/h6jMpPqlGAJP6cH94yrp
+  nodejs_version: "12"
+
+version: 0.0.0.{build}
+
+cache:
+- '%LOCALAPPDATA%/electron/cache'
+- '%LOCALAPPDATA%/electron-builder/cache'
+
+install:
+- ps: Install-Product node $env:nodejs_version
+- cmd: node --version
+- cmd: npm --version
+- cmd: npm ci
+
+for:
 -
   branches:
     only:
      - master
-
-  environment:
-    GH_TOKEN:
-      secure: QFxUKBUe3jwvUdS2rPo4w8J+WBaui0d0brYgm1yfgPU/h6jMpPqlGAJP6cH94yrp
-    nodejs_version: "12"
-
-  version: 0.0.0.{build}
-
-  cache:
-  - '%LOCALAPPDATA%/electron/cache'
-  - '%LOCALAPPDATA%/electron-builder/cache'
-
-  install:
-  - ps: Install-Product node $env:nodejs_version
-  - cmd: node --version
-  - cmd: npm --version
-  - cmd: npm ci
 
   test_script:
   - cmd: npm run build
@@ -31,23 +32,6 @@
   branches:
     except:
       - master
-
-environment:
-    GH_TOKEN:
-      secure: QFxUKBUe3jwvUdS2rPo4w8J+WBaui0d0brYgm1yfgPU/h6jMpPqlGAJP6cH94yrp
-    nodejs_version: "12"
-
-  version: 0.0.0.{build}
-
-  cache:
-  - '%LOCALAPPDATA%/electron/cache'
-  - '%LOCALAPPDATA%/electron-builder/cache'
-
-  install:
-  - ps: Install-Product node $env:nodejs_version
-  - cmd: node --version
-  - cmd: npm --version
-  - cmd: npm ci
 
   test_script:
   - cmd: npm run build
