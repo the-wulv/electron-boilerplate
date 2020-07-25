@@ -9,14 +9,35 @@ cache:
 - '%LOCALAPPDATA%/electron/cache'
 - '%LOCALAPPDATA%/electron-builder/cache'
 
-install:
-- ps: Install-Product node $env:nodejs_version
-- cmd: node --version
-- cmd: npm --version
-- cmd: npm ci
+-
+  branches:
+    only:
+     - master
 
-build_script:
-- cmd: npm run build
+  install:
+  - ps: Install-Product node $env:nodejs_version
+  - cmd: node --version
+  - cmd: npm --version
+  - cmd: npm ci
 
-test_script:
-- cmd: npm test
+  test_script:
+  - cmd: npm run build
+  - cmd: npm test
+
+  on_success:
+  - cmd: npm run publish
+
+-
+  branches:
+    except:
+      - master
+
+  install:
+  - ps: Install-Product node $env:nodejs_version
+  - cmd: node --version
+  - cmd: npm --version
+  - cmd: npm ci
+
+  test_script:
+  - cmd: npm run build
+  - cmd: npm test

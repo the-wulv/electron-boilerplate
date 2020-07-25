@@ -16,10 +16,22 @@ cache:
   - $HOME/.cache/electron
   - $HOME/Library/Caches/electron
 
+env:
+- build_command=build
+- build_command=publish
+
 install:
 - npm ci
+
+jobs:
+  include:
+    - if: branch = master
+      env: build_command=publish
+  exclude:
+    - if: branch = master
+      env: build_command=build
 
 script:
 - npm run bundle:prod
 - npm test
-- npm run build
+- npm run $build_command
