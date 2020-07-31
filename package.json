@@ -6,12 +6,13 @@
   "private": true,
   "main": "app/main.js",
   "scripts": {
-    "test": "node build-config && mocha",
+    "test": "node build-config && xvfb-maybe mocha",
     "start": "electron app/main.js",
     "bundle:dev": "node webpack --dev",
     "bundle:prod": "node webpack --prod",
     "bundle:live": "node webpack --dev --watch",
-    "build": "npm run bundle:prod && electron-builder --config build-config.js"
+    "build": "npm run bundle:prod && electron-builder --config build-config.js",
+    "publish": "npm run bundle:prod && electron-builder --config build-config.js --publish always"
   },
   "author": "Achilleas Michailidis",
   "license": "SEE LICENSE IN LICENSE",
@@ -26,7 +27,8 @@
     "mocha": "^7.1.2",
     "spectron": "^10.0.1",
     "style-loader": "^1.2.1",
-    "webpack": "^4.43.0"
+    "webpack": "^4.43.0",
+    "xvfb-maybe": "^0.2.1"
   },
   "dependencies": {
     "react": "^16.13.1",

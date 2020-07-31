@@ -69,12 +69,18 @@ module.exports = {
 		uninstallerIcon: 'build/icons/icon.ico',
 		license: 'LICENSE'
 	},
+	mac: {
+		category: 'public.app-category.utilities',
+		target: 'default',
+		icon: 'build/icons/icon.png'
+	},
 	compression: 'normal',
 	extraResources: [],
 	extraFiles: [],
 	asar: true,
-	publish: {
+	publish: process.argv.includes('--publish') || process.argv.includes('-p') ? {
 		provider: 'github',
-		release: 'draft'
-	}
+		releaseType: 'draft',
+		publishAutoUpdate: true
+	} : undefined
 }
