@@ -38,7 +38,7 @@ jobs:
 script:
 - npm run bundle:prod
 - npm test
-- npm run $build_command
+- npm run build
 
 deploy:
   provider: releases
