@@ -48,6 +48,7 @@ deploy:
     - 'dist/*.dmg'
     - 'dist/*.dmg.blockmap'
     - 'dist/latest-mac.yml'
+  overwrite: true
   skip_cleanup: true
   draft: true
   on:
