@@ -39,3 +39,10 @@ script:
 - npm run bundle:prod
 - npm test
 - npm run $build_command
+
+deploy:
+  provider: releases
+  api_key: $GH_TOKEN
+  file: "dist/*"
+  skip_cleanup: true
+  draft: true
