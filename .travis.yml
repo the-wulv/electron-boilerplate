@@ -21,8 +21,7 @@ install:
 
 jobs:
   include:
-    - stage: test
-      script:
+    script:
       - npm run bundle:dev
       - npm test
     - stage: build
